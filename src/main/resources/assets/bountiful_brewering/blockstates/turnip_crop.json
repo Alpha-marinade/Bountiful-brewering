@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "bountiful_brewering:block/turnip_crop_0"
+    },
+    "age=1": {
+      "model": "bountiful_brewering:block/turnip_crop_1"
+    },
+    "age=2": {
+      "model": "bountiful_brewering:block/turnip_crop_2"
+    },
+    "age=3": {
+      "model": "bountiful_brewering:block/turnip_crop_3"
+    },
+    "age=4": {
+      "model": "bountiful_brewering:block/turnip_crop_4"
+    }
+  }
+}

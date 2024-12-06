@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "bountiful_brewering",
+	"version": "${version}",
+	"name": "Bountiful brewering",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bountiful_brewering/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.trophy.BountifulBrewering"
+		],
+		"client": [
+			"com.trophy.BountifulBreweringClient"
+		]
+	},
+	"mixins": [
+		"bountiful_brewering.mixins.json",
+		{
+			"config": "bountiful_brewering.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+
+}

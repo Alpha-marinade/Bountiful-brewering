@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bountiful_brewering:block/mustard_crop_2"
+  }
+}

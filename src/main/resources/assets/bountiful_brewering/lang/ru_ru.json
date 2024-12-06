@@ -1,0 +1,23 @@
+{
+  "block.bountiful_brewering.stove": "Плита",
+  "block.bountiful_brewering.crimson_fruit": "Багровый фрукт",
+  "block.bountiful_brewering.crimson_stem": "Багровый стебель",
+  "block.bountiful_brewering.deepshrooms": "Глубиногриб",
+  "block.bountiful_brewering.black_grape_vine": "Семена чёрного винограда",
+  "item.bountiful_brewering.glass_jar": "Стеклянная банка",
+  "item.bountiful_brewering.hazelstem": "Коричник",
+  "block.bountiful_brewering.hazelstem_crop": "Семена коричника",
+  "item.bountiful_brewering.mustard_flower": "Цветок горчицы",
+  "item.bountiful_brewering.mustard_jar": "Банка горчицы",
+  "block.bountiful_brewering.mustard_crop": "Семена горчицы",
+  "item.bountiful_brewering.truffle": "Трюфель",
+  "block.bountiful_brewering.truffle_candle": "Трюфельная свеча",
+  "item.bountiful_brewering.truffle_jar": "Банка трюфельного масла",
+  "item.bountiful_brewring.rot": "Гниль",
+  "block.bountiful_brewering.turnip_crop": "Репа",
+  "block.bountiful_brewering.wild_hazelstem": "Дикий коричник",
+  "block.bountiful_brewering.wild_turnip": "Дикая репа",
+  "item.bountiful_brewering.deep_stuffed_potato": "Фарширванный картофель",
+  "itemTooltip.bountiful_brewering.food_create":"Приготовлено в %s день",
+  "itemTooltip.bountiful_brewering.food_end":"сгниёт через %s дней"
+}

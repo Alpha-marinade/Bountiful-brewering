@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "bountiful_brewering:block/turnip_crop_2"
+  }
+}
