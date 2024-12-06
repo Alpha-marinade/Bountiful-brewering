@@ -6,7 +6,7 @@ import com.trophy.block.crops.hazelStem;
 import com.trophy.block.crops.mustard;
 import com.trophy.block.crops.turnip;
 import com.trophy.block.crops.wildPlant;
-import com.trophy.item.hzchoeto;
+
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -27,10 +27,7 @@ import static com.trophy.BountifulBrewering.MOD_ID;
 
 public class itemReg {
     public static Item ROT = new Item(new Item.Settings());
-    public static Block STOVE = new stove(AbstractBlock.Settings.create()
-            .pistonBehavior(PistonBehavior.IGNORE)
-            .ticksRandomly()
-            .luminance(stove::getLuminance), ParticleTypes.FLAME);
+
     public static Block DEEPSHROOMS=new Block(AbstractBlock.Settings.create()
             .pistonBehavior(PistonBehavior.DESTROY)
             .breakInstantly()
@@ -38,14 +35,7 @@ public class itemReg {
             .noCollision()
             );
     public static Item TRUFFLE = new Item(new FabricItemSettings());
-    public static Block BLACK_GRAPE_VINE= new BlackGrapeVine(AbstractBlock.Settings.create()
-            .noCollision()
-            .breakInstantly()
-            .pistonBehavior(PistonBehavior.DESTROY)
-            .burnable()
-            .ticksRandomly()
-            .allowsSpawning((state, world, pos, type) -> false));
-    public static Item HZ_CHO_ETO = new hzchoeto(new Item.Settings());
+
     public static Item HAZELSTEM= new Item(new Item.Settings());
     public static Item GLASS_JAR= new Item(new Item.Settings());
     public static Item MUSTARD_JAR= new Item(new Item.Settings());
@@ -85,15 +75,12 @@ public class itemReg {
     public static Block WILD_HAZELSTEM = new wildPlant(FabricBlockSettings.copyOf(Blocks.GRASS));
     public static Block WILD_TURNIP = new wildPlant(FabricBlockSettings.copyOf(Blocks.GRASS));
     public static void init(){
-        Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"stove"),STOVE);
-        Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "stove"), new BlockItem(STOVE, new Item.Settings()));
-        Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"black_grape_vine"),BLACK_GRAPE_VINE);
+
         Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"deepshrooms"),DEEPSHROOMS);
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "deepshrooms"), new BlockItem(DEEPSHROOMS, new Item.Settings()));
         Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"truffle_candle"),TRUFFLE_CANDLE);
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "truffle_candle"), new BlockItem(TRUFFLE_CANDLE, new Item.Settings()));
-        Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "black_grape_vine_seeds"), new BlockItem(BLACK_GRAPE_VINE, new Item.Settings()));
-        Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"hz_cho_eto"),HZ_CHO_ETO);
+
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"truffle"),TRUFFLE);
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"rot"),ROT);
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"glass_jar"),GLASS_JAR);
@@ -119,7 +106,6 @@ public class itemReg {
         Registry.register(Registries.ITEM_GROUP, BBKEY, BBGROUP);
 
         ItemGroupEvents.modifyEntriesEvent(BBKEY).register(itemGroup -> {
-            itemGroup.add(HZ_CHO_ETO);
             itemGroup.add(SPOREFLOWERFRUCT);
             itemGroup.add(SPOREFLOWERSTEM);
             itemGroup.add( HAZELSTEM);
@@ -127,7 +113,6 @@ public class itemReg {
             itemGroup.add(WILD_HAZELSTEM);
             itemGroup.add(TURNIP_CROP);
             itemGroup.add(WILD_TURNIP);
-            itemGroup.add(BLACK_GRAPE_VINE);
             itemGroup.add(GLASS_JAR);
             itemGroup.add(MUSTARD_JAR);
             itemGroup.add(MUSTARD_FLOWER);
@@ -137,7 +122,6 @@ public class itemReg {
             itemGroup.add(TRUFFLE_CANDLE);
             itemGroup.add(TRUFFLE);
             itemGroup.add(DEEPSHROOMS);
-            itemGroup.add(STOVE);
 
 
 
