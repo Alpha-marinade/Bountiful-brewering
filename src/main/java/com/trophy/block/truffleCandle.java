@@ -9,6 +9,8 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
@@ -55,8 +57,21 @@ public class truffleCandle extends Block implements Waterloggable {
             double d = (double)pos.getX() + 0.5;
             double e = (double)pos.getY() + 0.6;
             double f = (double)pos.getZ() + 0.5;
+            float j = random.nextFloat();
             world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0, 0.0, 0.0);
             world.addParticle(this.particle, d, e, f, 0.0, 0.0, 0.0);
+            if (j < 0.17F) {
+                world.playSound(
+                        pos.getX() + 0.5,
+                        pos.getY() + 0.5,
+                        pos.getZ() + 0.5,
+                        SoundEvents.BLOCK_CANDLE_AMBIENT,
+                        SoundCategory.BLOCKS,
+                        1.0F + random.nextFloat(),
+                        random.nextFloat() * 0.7F + 0.3F,
+                        false
+                );
+            }
         }
 
     }

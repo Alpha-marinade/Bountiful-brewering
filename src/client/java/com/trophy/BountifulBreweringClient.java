@@ -14,7 +14,6 @@ public class BountifulBreweringClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.WILD_HAZELSTEM, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.TURNIP_CROP, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.WILD_TURNIP, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.BLACK_GRAPE_VINE, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.MUSTARD_CROP, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock (itemReg.DEEPSHROOMS, RenderLayer.getCutout());
 		foodToolTip.init();

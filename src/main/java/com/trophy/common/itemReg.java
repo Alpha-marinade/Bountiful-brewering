@@ -20,20 +20,27 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static com.trophy.BountifulBrewering.MOD_ID;
 
 public class itemReg {
-    public static Item ROT = new Item(new Item.Settings());
 
-    public static Block DEEPSHROOMS=new Block(AbstractBlock.Settings.create()
+
+    public static Block DEEPSHROOMS=new deepshrooms(AbstractBlock.Settings.create()
             .pistonBehavior(PistonBehavior.DESTROY)
             .breakInstantly()
             .offset(AbstractBlock.OffsetType.XYZ)
             .noCollision()
+
             );
+    public static Block SHROOMSSLATE = new Block(AbstractBlock.Settings.create()
+            .pistonBehavior(PistonBehavior.NORMAL)
+            .sounds(BlockSoundGroup.DEEPSLATE)
+
+    );
     public static Item TRUFFLE = new Item(new FabricItemSettings());
 
     public static Item HAZELSTEM= new Item(new Item.Settings());
@@ -75,6 +82,8 @@ public class itemReg {
     public static Block WILD_HAZELSTEM = new wildPlant(FabricBlockSettings.copyOf(Blocks.GRASS));
     public static Block WILD_TURNIP = new wildPlant(FabricBlockSettings.copyOf(Blocks.GRASS));
     public static void init(){
+        Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"shroomsslate"),SHROOMSSLATE);
+        Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "shroomsslate"), new BlockItem(SHROOMSSLATE, new Item.Settings()));
 
         Registry.register(Registries.BLOCK,Identifier.of(MOD_ID,"deepshrooms"),DEEPSHROOMS);
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "deepshrooms"), new BlockItem(DEEPSHROOMS, new Item.Settings()));
@@ -82,7 +91,7 @@ public class itemReg {
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "truffle_candle"), new BlockItem(TRUFFLE_CANDLE, new Item.Settings()));
 
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"truffle"),TRUFFLE);
-        Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"rot"),ROT);
+
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"glass_jar"),GLASS_JAR);
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"deep_stuffed_potato"),DEEP_STUFFED_POTATO);
         Registry.register(Registries.ITEM,Identifier.of(MOD_ID,"truffle_jar"),TRUFFLE_JAR);
@@ -122,6 +131,7 @@ public class itemReg {
             itemGroup.add(TRUFFLE_CANDLE);
             itemGroup.add(TRUFFLE);
             itemGroup.add(DEEPSHROOMS);
+            itemGroup.add(SHROOMSSLATE);
 
 
 

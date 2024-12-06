@@ -16,6 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
@@ -38,6 +40,7 @@ public class extinguishCandle  extends ThrownItemEntity  implements FlyingItemEn
         if (blockState== itemReg.TRUFFLE_CANDLE.getDefaultState().with(LIGHT ,true)) {
             this.getWorld().syncWorldEvent(null, WorldEvents.FIRE_EXTINGUISHED, pos, 0);
             this.getWorld().setBlockState(pos, blockState.with(LIGHT, Boolean.valueOf(false)));
+            this.getWorld().playSound(null, pos, SoundEvents.BLOCK_CANDLE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
         }
     }
     @Override

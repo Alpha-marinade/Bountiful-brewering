@@ -19,5 +19,8 @@
   "block.bountiful_brewering.wild_turnip": "Дикая репа",
   "item.bountiful_brewering.deep_stuffed_potato": "Фарширванный картофель",
   "itemTooltip.bountiful_brewering.food_create":"Приготовлено в %s день",
-  "itemTooltip.bountiful_brewering.food_end":"сгниёт через %s дней"
+  "itemTooltip.bountiful_brewering.food_end":"сгниёт через %s дней",
+  "itemGroup.bountiful_brewering":"Bountiful Brewering",
+  "block.bountiful_brewering.shroomsslate": "грибной сланец"
+
 }
