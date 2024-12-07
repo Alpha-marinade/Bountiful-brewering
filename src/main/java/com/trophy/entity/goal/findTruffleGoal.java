@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.MoveToTargetPosGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.SnifferEntity;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -14,9 +15,11 @@ import java.util.EnumSet;
 
 public class findTruffleGoal extends MoveToTargetPosGoal {
 
+
     public findTruffleGoal(PathAwareEntity mob, double speed, int range) {
         super(mob, speed, range);
         this.lowestY = -60;
+
 
         this.setControls(EnumSet.of(Goal.Control.JUMP, Goal.Control.MOVE));
     }
@@ -28,27 +31,27 @@ public class findTruffleGoal extends MoveToTargetPosGoal {
 
     @Override
     protected boolean findTargetPos() {
-        for(int x=-32; x<=32; x++){
-            for (int z=-32; z<=32; z++){
-              for(int y = -60; y<=320; y++){
-                  BlockPos pos = this.mob.getBlockPos().add(x,y,z);
-                  if (this.isTargetPos(this.mob.getWorld(), pos)){
-                      this.targetPos=pos;
-                      return true;
-                  }
-              }
+        if(this.mob.getWorld().getBlockState(this.targetPos)!=itemReg.SHROOMSSLATE.getDefaultState()) {
+            for (int x = -32; x <= 32; x++) {
+                for (int z = -32; z <= 32; z++) {
+                    for (int y = -60; y <= 320; y++) {
+                        BlockPos pos = this.mob.getBlockPos().add(x, y, z);
+                        if (this.isTargetPos(this.mob.getWorld(), pos)) {
+                            this.targetPos = pos;
+                            return true;
+                        }
+                    }
+                }
             }
         }
+        else {return true;}
         return false;
     }
 
     @Override
     public void tick() {
-        System.out.println(this.targetPos);
         super.tick();
-        if(this.mob.getPos().getX()==this.targetPos.getX()&&this.mob.getPos().getZ()==this.targetPos.getZ()){
 
-        }
     }
 
     @Override

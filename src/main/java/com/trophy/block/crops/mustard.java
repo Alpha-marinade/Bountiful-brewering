@@ -67,6 +67,7 @@ public class mustard extends PlantBlock implements Fertilizable {
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(itemReg.MUSTARD_FLOWER, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(itemReg.MUSTARD_CROP, 1));
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             BlockState blockState = state.with(AGE, Integer.valueOf(1));
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
