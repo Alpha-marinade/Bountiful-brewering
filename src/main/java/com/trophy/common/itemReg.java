@@ -36,11 +36,8 @@ public class itemReg {
             .noCollision()
 
             );
-    public static Block SHROOMSSLATE = new Block(AbstractBlock.Settings.create()
-            .pistonBehavior(PistonBehavior.NORMAL)
-            .sounds(BlockSoundGroup.DEEPSLATE)
+    public static Block SHROOMSSLATE = new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE));
 
-    );
     public static Item TRUFFLE = new Item(new FabricItemSettings());
 
     public static Item HAZELSTEM= new Item(new Item.Settings());
@@ -51,7 +48,7 @@ public class itemReg {
     public static Item DEEP_STUFFED_POTATO= new Item(new Item.Settings()
             .food(new FoodComponent.Builder()
                     .hunger(7)
-                    .saturationModifier(6)
+                    .saturationModifier(1.2f)
                     .build()));
     public static Block SPOREFLOWERFRUCT = new sporeFlowerFruct(AbstractBlock.Settings.create()
       .ticksRandomly()

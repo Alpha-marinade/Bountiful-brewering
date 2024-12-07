@@ -76,6 +76,7 @@ public class truffleCandle extends Block implements Waterloggable {
 
     }
 
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(LIGHT,WATERLOGGED);
